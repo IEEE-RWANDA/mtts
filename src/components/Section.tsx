@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import NetworkCanvas from "@/components/NetworkCanvas";
+import WaveCanvas from "@/components/WaveCanvas";
 
 export function Section({
   children,
@@ -75,8 +75,8 @@ export function SectionHeading({
   );
 }
 
-// Dark page header used on all inner pages: dot-grid texture, glow blob,
-// subtle network canvas. Padding-top clears the fixed navbar.
+// Light page header used on all inner pages: sine-wave motif along the
+// bottom edge. Padding-top clears the fixed navbar.
 export function PageHero({
   eyebrow,
   title,
@@ -88,8 +88,7 @@ export function PageHero({
 }) {
   return (
     <div className="relative overflow-hidden border-b border-slate-200 bg-white pb-20 pt-36 md:pb-24 md:pt-44">
-      <div className="dot-grid absolute inset-0 opacity-60 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
-      <NetworkCanvas className="opacity-40" />
+      <WaveCanvas className="absolute inset-x-0 bottom-0 h-40 w-full" />
       <div className="relative mx-auto max-w-6xl px-4 md:px-6">
         {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
         <h1 className="font-display text-4xl font-bold tracking-tight text-ink md:text-6xl">

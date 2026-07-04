@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 md:px-6">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2.5 md:px-6">
         <Link
           href="/"
           className="group flex items-center gap-3"
@@ -28,11 +28,11 @@ export default function Navbar() {
           <img
             src="/mtts-logo.svg"
             alt="IEEE Microwave Theory &amp; Technology Society"
-            className="h-10 w-auto"
+            className="h-14 w-auto"
           />
-          <span className="h-8 w-px bg-slate-300" aria-hidden />
+          <span className="h-10 w-px bg-slate-300" aria-hidden />
           <span className="leading-tight">
-            <span className="block font-display text-base font-bold tracking-tight text-ieee-blue">
+            <span className="block font-display text-lg font-bold tracking-tight text-ieee-blue">
               Rwanda
             </span>
             <span className="block font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">
