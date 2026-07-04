@@ -60,21 +60,21 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between border-x border-rule px-4 py-2.5 md:px-6">
         <Link
           href="/"
-          className="flex items-center gap-3"
+          className="flex items-center gap-2"
           onClick={() => setOpen(false)}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/mtts-logo.svg"
             alt="IEEE Microwave Theory &amp; Technology Society"
-            className="h-14 w-auto md:h-16"
+            className="h-10 w-auto"
           />
-          <span className="h-10 w-px bg-rule" aria-hidden />
+          <span className="h-8 w-px bg-rule" aria-hidden />
           <span className="leading-tight">
-            <span className="block font-display text-2xl tracking-wide text-ink">
+            <span className="block font-display text-lg tracking-wide text-ink">
               Rwanda
             </span>
-            <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-body-gray">
+            <span className="block text-[9px] font-semibold uppercase tracking-[0.15em] text-body-gray">
               Chapter
             </span>
           </span>
