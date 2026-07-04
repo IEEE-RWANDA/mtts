@@ -2,19 +2,21 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0f172a;
+  --foreground: #212429;
 
-  /* Plain IEEE brand palette: IEEE Blue #00629B as the single accent,
-     IEEE Dark Blue #002855 (deepened for page backgrounds). accent-bright
-     is a lighter tint of IEEE Blue for legible text on dark backgrounds.
-     ComSoc green #008542 only marks live/upcoming events. */
-  --ieee-blue: #00629b;
-  --ieee-dark: #002855;
-  --ink: #001529;
-  --accent: #00609c;
-  --accent-bright: #6ab0dc;
+  /* MTT-S web palette, extracted from mtt.org's stylesheet:
+     primary blue #0A6AAB, dark navy #032E4B, bright accent #22A6FF,
+     body gray #495057, light band #F2F2F2, hairline #DDE2E5.
+     Green #008542 only marks live/upcoming events. */
+  --ieee-blue: #0a6aab;
+  --ieee-dark: #032e4b;
+  --ink: #032e4b;
+  --accent: #0a6aab;
+  --accent-bright: #22a6ff;
   --live-green: #008542;
-  --surface: #f5f6fa;
+  --surface: #f2f2f2;
+  --rule: #dde2e5;
+  --body-gray: #495057;
 }
 
 @theme inline {
@@ -27,59 +29,30 @@
   --color-accent-bright: var(--accent-bright);
   --color-live-green: var(--live-green);
   --color-surface: var(--surface);
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-space-grotesk);
-  --font-mono: var(--font-jetbrains-mono);
+  --color-rule: var(--rule);
+  --color-body-gray: var(--body-gray);
+  --font-sans: var(--font-montserrat);
+  --font-display: var(--font-bebas);
+  --font-mono: var(--font-montserrat);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Infinite marquee — track holds two copies of the list, shifts one copy. */
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
-
-.marquee-mask {
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 96px,
-    black calc(100% - 96px),
-    transparent
-  );
-}
-
-/* Dot-grid texture for dark sections. */
-.dot-grid {
-  background-image: radial-gradient(
-    circle,
-    rgba(148, 163, 184, 0.22) 1px,
-    transparent 1px
-  );
-  background-size: 24px 24px;
+/* mtt.org's signature section heading: 6px bright-blue left border. */
+.bordered {
+  border-left: 6px solid var(--accent-bright);
+  padding-left: 1.25rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
-    animation: none;
-  }
   html {
     scroll-behavior: auto;
   }

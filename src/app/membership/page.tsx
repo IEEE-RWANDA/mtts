@@ -73,14 +73,14 @@ export default function MembershipPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           {benefits.map((b, i) => (
             <Reveal key={b.title} delay={i * 80}>
-              <div className="group h-full rounded-2xl border border-slate-200 bg-surface p-7 transition duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-slate-900/5">
+              <div className="group h-full rounded-sm border border-rule bg-surface p-7 transition duration-300 hover:border-accent-bright">
                 <span className="font-mono text-xs text-slate-400">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-3 font-display text-lg font-semibold tracking-tight text-ink">
                   {b.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                <p className="mt-2 text-sm leading-relaxed text-body-gray">
                   {b.description}
                 </p>
               </div>
@@ -89,14 +89,14 @@ export default function MembershipPage() {
         </div>
       </Section>
 
-      <Section className="border-t border-slate-200 bg-surface">
+      <Section className="border-t border-rule bg-surface">
         <Reveal>
           <SectionHeading
             eyebrow="How to join"
             title="Three simple steps"
           />
         </Reveal>
-        <div className="grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 md:grid-cols-3">
+        <div className="grid gap-px overflow-hidden rounded-sm border border-rule bg-rule md:grid-cols-3">
           {steps.map((s) => (
             <div key={s.step} className="bg-white p-8">
               <span className="font-mono text-sm text-ieee-blue">
@@ -105,7 +105,7 @@ export default function MembershipPage() {
               <h3 className="mt-4 font-display text-xl font-semibold tracking-tight text-ink">
                 {s.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+              <p className="mt-3 text-sm leading-relaxed text-body-gray">
                 {s.description}
               </p>
             </div>
@@ -116,7 +116,7 @@ export default function MembershipPage() {
             href="https://www.ieee.org/membership/join"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg bg-accent px-6 py-3.5 font-semibold text-white transition hover:brightness-110"
+            className="rounded-sm bg-accent px-6 py-3 font-display text-xl tracking-wide text-white transition hover:brightness-110"
           >
             Join IEEE →
           </a>
@@ -124,7 +124,7 @@ export default function MembershipPage() {
             href="https://mtt.org/membership/"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg border border-slate-300 px-6 py-3.5 font-semibold text-ink transition hover:border-slate-400 hover:bg-white"
+            className="rounded-sm border border-ink px-6 py-3 font-display text-xl tracking-wide text-ink transition hover:bg-ink hover:text-white"
           >
             IEEE MTT-S membership
           </a>
@@ -133,12 +133,12 @@ export default function MembershipPage() {
 
       <Section>
         <Reveal>
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-surface md:grid md:grid-cols-[1fr_18rem]">
+          <div className="overflow-hidden rounded-sm border border-rule bg-surface md:grid md:grid-cols-[1fr_18rem]">
             <div className="border-l-4 border-accent p-8">
               <h3 className="font-display text-lg font-semibold tracking-tight text-ink">
                 Students: ask about student membership
               </h3>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-body-gray">
                 IEEE student membership is significantly discounted, and MTT-S
                 offers additional student resources, design competitions, and
                 travel grants. If you&apos;re at a Rwandan university, get in touch. We

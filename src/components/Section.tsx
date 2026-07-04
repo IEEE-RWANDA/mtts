@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import WaveCanvas from "@/components/WaveCanvas";
 
 export function Section({
   children,
@@ -11,7 +10,7 @@ export function Section({
   id?: string;
 }) {
   return (
-    <section id={id} className={`py-24 md:py-28 ${className}`}>
+    <section id={id} className={`py-16 md:py-20 ${className}`}>
       <div className="mx-auto max-w-6xl px-4 md:px-6">{children}</div>
     </section>
   );
@@ -26,21 +25,16 @@ export function Eyebrow({
 }) {
   return (
     <p
-      className={`mb-4 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] ${
-        dark ? "text-accent-bright" : "text-ieee-blue"
+      className={`mb-3 text-xs font-semibold uppercase tracking-[0.2em] ${
+        dark ? "text-white/70" : "text-body-gray"
       }`}
     >
-      <span
-        className={`h-0.5 w-6 rounded-full ${
-          dark ? "bg-accent-bright" : "bg-ieee-blue"
-        }`}
-        aria-hidden
-      />
       {children}
     </p>
   );
 }
 
+// mtt.org's signature heading: Bebas Neue with a 6px bright-blue left border.
 export function SectionHeading({
   eyebrow,
   title,
@@ -53,10 +47,10 @@ export function SectionHeading({
   dark?: boolean;
 }) {
   return (
-    <div className="mb-14 max-w-2xl">
+    <div className="mb-10">
       {eyebrow && <Eyebrow dark={dark}>{eyebrow}</Eyebrow>}
       <h2
-        className={`font-display text-3xl font-bold tracking-tight md:text-5xl ${
+        className={`bordered font-display text-4xl tracking-wide md:text-5xl ${
           dark ? "text-white" : "text-ink"
         }`}
       >
@@ -64,8 +58,8 @@ export function SectionHeading({
       </h2>
       {subtitle && (
         <p
-          className={`mt-4 text-base md:text-lg ${
-            dark ? "text-slate-400" : "text-slate-600"
+          className={`mt-4 max-w-2xl text-base ${
+            dark ? "text-white/80" : "text-body-gray"
           }`}
         >
           {subtitle}
@@ -75,8 +69,7 @@ export function SectionHeading({
   );
 }
 
-// Light page header used on all inner pages: sine-wave motif along the
-// bottom edge. Padding-top clears the fixed navbar.
+// Page header in mtt.org's style: light gray band, breadcrumb, Bebas title.
 export function PageHero({
   eyebrow,
   title,
@@ -87,15 +80,18 @@ export function PageHero({
   subtitle?: string;
 }) {
   return (
-    <div className="relative overflow-hidden border-b border-slate-200 bg-white pb-20 pt-36 md:pb-24 md:pt-44">
-      <WaveCanvas className="absolute inset-x-0 bottom-0 h-40 w-full" />
-      <div className="relative mx-auto max-w-6xl px-4 md:px-6">
-        {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-        <h1 className="font-display text-4xl font-bold tracking-tight text-ink md:text-6xl">
+    <div className="border-b border-rule bg-surface">
+      <div className="mx-auto max-w-6xl px-4 pb-12 pt-12 md:px-6 md:pb-14 md:pt-16">
+        {eyebrow && (
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-body-gray">
+            Home <span className="text-accent-bright">/</span> {eyebrow}
+          </p>
+        )}
+        <h1 className="bordered font-display text-5xl tracking-wide text-ink md:text-6xl">
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-5 max-w-2xl text-base text-slate-600 md:text-lg">
+          <p className="mt-4 max-w-2xl text-base text-body-gray md:text-lg">
             {subtitle}
           </p>
         )}

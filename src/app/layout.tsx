@@ -1,24 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Bebas_Neue, Montserrat } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const bebas = Bebas_Neue({
+  variable: "--font-bebas",
   subsets: ["latin"],
+  weight: "400",
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -38,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${bebas.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Navbar />

@@ -31,7 +31,7 @@ export default function TeamPage() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {team.map((member, i) => (
             <Reveal key={member.role} delay={i * 80}>
-              <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-slate-900/5">
+              <div className="group overflow-hidden rounded-sm border border-rule bg-white transition duration-300 hover:border-accent-bright">
                 {member.photo ? (
                   <div className="relative aspect-square overflow-hidden">
                     <Image
@@ -44,7 +44,6 @@ export default function TeamPage() {
                   </div>
                 ) : (
                   <div className="relative flex aspect-square items-center justify-center overflow-hidden bg-ieee-blue">
-                    <div className="dot-grid absolute inset-0 opacity-30" />
                     <span className="relative font-display text-4xl font-bold text-white">
                       {member.name
                         .split(" ")
@@ -81,10 +80,9 @@ export default function TeamPage() {
         </div>
       </Section>
 
-      <Section className="border-t border-slate-200 bg-surface">
+      <Section className="border-t border-rule bg-surface">
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl bg-ieee-blue px-8 py-14 text-center md:px-14">
-            <div className="dot-grid absolute inset-0 opacity-25" />
+          <div className="relative overflow-hidden rounded-sm bg-ieee-dark px-8 py-14 text-center md:px-14">
             <div className="relative">
               <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
                 Want to volunteer?
@@ -96,7 +94,7 @@ export default function TeamPage() {
               </p>
               <Link
                 href="/contact"
-                className="mt-8 inline-block rounded-lg bg-white px-6 py-3.5 font-semibold text-ieee-blue transition hover:bg-slate-100"
+                className="mt-8 inline-block rounded-sm bg-white px-6 py-3 font-display text-xl tracking-wide text-accent transition hover:bg-surface"
               >
                 Contact us
               </Link>

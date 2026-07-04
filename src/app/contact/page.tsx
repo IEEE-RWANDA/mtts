@@ -75,18 +75,18 @@ export default function ContactPage() {
               eyebrow="Partnerships"
               title="Work with the chapter"
             />
-            <p className="leading-relaxed text-slate-600">
+            <p className="leading-relaxed text-body-gray">
               We partner with universities, telecom operators, regulators, and
               tech companies on events, training, and outreach. If your
               organization would like to host a talk, sponsor a workshop, or
               collaborate on a program, email us. We typically respond within
               a few days.
             </p>
-            <div className="mt-8 rounded-2xl border border-slate-200 bg-surface p-7">
+            <div className="mt-8 rounded-sm border border-rule bg-surface p-7">
               <h3 className="font-display font-semibold tracking-tight text-ink">
                 Speaking opportunities
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              <p className="mt-2 text-sm leading-relaxed text-body-gray">
                 Are you a researcher or practitioner in communications who
                 wants to present to the community? We welcome proposals for
                 technical talks and tutorials.

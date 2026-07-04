@@ -14,14 +14,14 @@ function EventRow({ event, first }: { event: EventItem; first: boolean }) {
   return (
     <div
       className={`group flex flex-col gap-5 p-6 transition-colors hover:bg-slate-50 sm:flex-row md:p-8 ${
-        first ? "" : "border-t border-slate-200"
+        first ? "" : "border-t border-rule"
       }`}
     >
-      <div className="flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-2xl bg-ieee-blue text-white">
+      <div className="flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-sm bg-accent-bright text-ieee-dark">
         <span className="font-display text-2xl font-bold leading-none">
           {d.getDate()}
         </span>
-        <span className="mt-1 font-mono text-[10px] uppercase tracking-widest text-white/70">
+        <span className="mt-1 text-[10px] font-bold uppercase tracking-widest text-ieee-dark/80">
           {d.toLocaleDateString("en-GB", { month: "short" })} {d.getFullYear()}
         </span>
       </div>
@@ -43,7 +43,7 @@ function EventRow({ event, first }: { event: EventItem; first: boolean }) {
         <p className="mt-1 font-mono text-xs uppercase tracking-widest text-slate-400">
           {event.location}
         </p>
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600">
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-body-gray">
           {event.description}
         </p>
         {event.registrationUrl && (
@@ -51,7 +51,7 @@ function EventRow({ event, first }: { event: EventItem; first: boolean }) {
             href={event.registrationUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 inline-block rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110"
+            className="mt-4 inline-block rounded-sm bg-accent px-4 py-2 font-display text-lg tracking-wide text-white transition hover:brightness-110"
           >
             Register →
           </a>
@@ -82,13 +82,13 @@ export default function EventsPage() {
           <SectionHeading eyebrow="Calendar" title="Upcoming" />
         </Reveal>
         {upcoming.length > 0 ? (
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+          <div className="overflow-hidden rounded-sm border border-rule bg-white">
             {upcoming.map((event, i) => (
               <EventRow key={event.title} event={event} first={i === 0} />
             ))}
           </div>
         ) : (
-          <div className="rounded-2xl border border-dashed border-slate-300 bg-surface p-10 text-center">
+          <div className="rounded-sm border border-dashed border-rule bg-surface p-10 text-center">
             <p className="font-display font-semibold text-ink">
               No upcoming events scheduled yet
             </p>
@@ -109,11 +109,11 @@ export default function EventsPage() {
       </Section>
 
       {past.length > 0 && (
-        <Section className="border-t border-slate-200 bg-surface">
+        <Section className="border-t border-rule bg-surface">
           <Reveal>
             <SectionHeading eyebrow="Archive" title="Past events" />
           </Reveal>
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+          <div className="overflow-hidden rounded-sm border border-rule bg-white">
             {past.map((event, i) => (
               <EventRow key={event.title} event={event} first={i === 0} />
             ))}

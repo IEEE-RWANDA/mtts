@@ -17,41 +17,80 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2.5 md:px-6">
+    <header className="sticky top-0 z-50 bg-white shadow-sm">
+      {/* Top utility menu, mtt.org style */}
+      <div className="hidden border-b border-rule md:block">
+        <div className="mx-auto flex max-w-6xl items-center justify-end gap-6 border-x border-rule px-6 py-2 text-xs font-medium text-body-gray">
+          <a
+            href="https://www.ieee.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-accent"
+          >
+            IEEE.org
+          </a>
+          <a
+            href="https://mtt.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-accent"
+          >
+            MTT.org
+          </a>
+          <a
+            href="https://ieeexplore.ieee.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-accent"
+          >
+            IEEE Xplore
+          </a>
+          <a
+            href="https://www.linkedin.com/showcase/ch08150"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-accent"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      {/* Main menu */}
+      <nav className="mx-auto flex max-w-6xl items-center justify-between border-x border-rule px-4 py-2.5 md:px-6">
         <Link
           href="/"
-          className="group flex items-center gap-3"
+          className="flex items-center gap-3"
           onClick={() => setOpen(false)}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/mtts-logo.svg"
             alt="IEEE Microwave Theory &amp; Technology Society"
-            className="h-14 w-auto"
+            className="h-14 w-auto md:h-16"
           />
-          <span className="h-10 w-px bg-slate-300" aria-hidden />
+          <span className="h-10 w-px bg-rule" aria-hidden />
           <span className="leading-tight">
-            <span className="block font-display text-lg font-bold tracking-tight text-ieee-blue">
+            <span className="block font-display text-2xl tracking-wide text-ink">
               Rwanda
             </span>
-            <span className="block font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">
+            <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-body-gray">
               Chapter
             </span>
           </span>
         </Link>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-7 md:flex">
           {links.map((link) => {
             const active = pathname.startsWith(link.href);
             return (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`rounded-lg px-3.5 py-2 text-sm transition-colors ${
+                  className={`text-sm font-semibold transition-colors ${
                     active
-                      ? "text-ieee-blue"
-                      : "text-slate-600 hover:bg-slate-100 hover:text-ink"
+                      ? "text-accent"
+                      : "text-ink hover:text-accent"
                   }`}
                 >
                   {link.label}
@@ -64,7 +103,7 @@ export default function Navbar() {
               href="https://mtt.org/membership/"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-3 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110"
+              className="rounded-sm bg-accent px-5 py-2.5 font-display text-lg tracking-wide text-white transition hover:brightness-110"
             >
               Join MTT-S
             </a>
@@ -75,7 +114,7 @@ export default function Navbar() {
           type="button"
           aria-label="Toggle menu"
           aria-expanded={open}
-          className="flex h-10 w-10 items-center justify-center rounded-lg text-slate-700 hover:bg-slate-100 md:hidden"
+          className="flex h-10 w-10 items-center justify-center text-ink hover:bg-surface md:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           <svg
@@ -95,12 +134,12 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <ul className="border-t border-slate-200 bg-white px-4 pb-5 pt-2 md:hidden">
+        <ul className="border-t border-rule bg-white px-4 pb-5 pt-2 md:hidden">
           {links.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="block rounded-lg px-3 py-3 text-sm text-slate-700 hover:bg-slate-100"
+                className="block px-3 py-3 text-sm font-semibold text-ink hover:bg-surface"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
@@ -112,7 +151,7 @@ export default function Navbar() {
               href="https://mtt.org/membership/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 block rounded-lg bg-accent px-4 py-3 text-center text-sm font-semibold text-white"
+              className="mt-3 block rounded-sm bg-accent px-4 py-3 text-center font-display text-lg tracking-wide text-white"
             >
               Join MTT-S
             </a>

@@ -33,7 +33,7 @@ export default function AboutPage() {
         <div className="grid gap-16 lg:grid-cols-2">
           <Reveal>
             <SectionHeading eyebrow="Mission" title="What drives us" />
-            <div className="space-y-4 leading-relaxed text-slate-600">
+            <div className="space-y-4 leading-relaxed text-body-gray">
               <p>
                 The IEEE MTT-S Rwanda Chapter promotes the advancement of
                 microwave theory, radio-frequency engineering, and wireless
@@ -65,7 +65,7 @@ export default function AboutPage() {
 
           <Reveal delay={100}>
             <SectionHeading eyebrow="Structure" title="Part of IEEE" />
-            <p className="leading-relaxed text-slate-600">
+            <p className="leading-relaxed text-body-gray">
               The chapter operates under the IEEE Rwanda Subsection, the first
               IEEE geographic unit in Rwanda, launched in Kigali in July 2026
               within{" "}
@@ -97,7 +97,7 @@ export default function AboutPage() {
                 "Access to MTT-S publications, conferences, and training",
                 "International partnerships through the joint chapter, including joint sessions with chapters worldwide",
               ].map((item) => (
-                <li key={item} className="flex gap-3 text-slate-600">
+                <li key={item} className="flex gap-3 text-body-gray">
                   <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-ieee-blue/10 font-mono text-[10px] font-bold text-ieee-blue">
                     ✓
                   </span>
@@ -109,7 +109,7 @@ export default function AboutPage() {
         </div>
 
         <Reveal className="mt-20">
-          <div className="relative overflow-hidden rounded-3xl">
+          <div className="relative overflow-hidden rounded-sm">
             <Image
               src="/images/kigali.jpg"
               alt="Kigali city skyline at sunset"
@@ -126,7 +126,7 @@ export default function AboutPage() {
         </Reveal>
       </Section>
 
-      <Section className="border-t border-slate-200 bg-surface">
+      <Section className="border-t border-rule bg-surface">
         <Reveal>
           <SectionHeading
             eyebrow="Focus areas"
@@ -137,7 +137,7 @@ export default function AboutPage() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {topics.map((topic, i) => (
             <Reveal key={topic} delay={i * 60}>
-              <div className="group rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-slate-900/5">
+              <div className="group rounded-sm border border-rule bg-white p-6 transition duration-300 hover:border-accent-bright">
                 <span className="font-mono text-xs text-slate-400">
                   {String(i + 1).padStart(2, "0")}
                 </span>
