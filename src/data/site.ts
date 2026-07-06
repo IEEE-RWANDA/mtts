@@ -11,6 +11,7 @@ export type EventItem = {
   description: string;
   registrationUrl?: string;
   past?: boolean;
+  image?: string; // optional path under /public, e.g. "/events/talk.jpg"
 };
 
 export type TeamMember = {

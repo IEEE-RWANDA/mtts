@@ -202,6 +202,17 @@ export default function Home() {
                       </svg>
                       {event.location}
                     </p>
+                    {event.image && (
+                      <div className="relative mt-4 aspect-[16/9] overflow-hidden rounded-sm">
+                        <Image
+                          src={event.image}
+                          alt={event.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    )}
                     <Link
                       href="/events"
                       className="mt-4 inline-block font-display text-lg tracking-wide text-accent hover:text-ink"
