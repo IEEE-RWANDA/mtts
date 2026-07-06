@@ -1,3 +1,5 @@
+import eventsData from "./events.json";
+import teamData from "./team.json";
 // Central content file for the IEEE MTT-S Rwanda Chapter website.
 // Chapter members: update events, team, and contact info here — no need to
 // touch the page components.
@@ -34,46 +36,8 @@ export const site = {
   },
 };
 
-export const events: EventItem[] = [
-  {
-    title: "IEEE Rwanda Subsection Launch & Societies Engagement Forum",
-    date: "2026-07-17",
-    location: "Kigali, Rwanda",
-    description:
-      "Official launch of the IEEE Rwanda Subsection, the first IEEE geographic unit in Rwanda, supported by IEEE Smart Cities, the IEEE Africa Council, and IEEE Region 8, with engagement sessions for IEEE societies including MTT-S.",
-  },
-  {
-    title: "Joint Technical Session with the IEEE ComSoc Kerala Chapter",
-    date: "2026-06-30",
-    location: "Online (Google Meet)",
-    description:
-      "Joint session hosted by our chapter under ComSoc's Twin Chapter Program. Talks: “The Future of Spectrum Sovereignty” by Dr. Edwin Mugume (CMU-Africa) and “Digital Battlefield: Radar Communication and Sensor Fusion in Contemporary Fighter Aircrafts” by Krishna Priya Boban (IEEE ComSoc Kerala).",
-    past: true,
-  },
-  // TODO: add upcoming events as they are scheduled.
-];
+export const events: EventItem[] = eventsData as EventItem[];
 
 // TODO: replace with the actual executive committee once officers are
 // confirmed. No official officer list was published as of July 2026.
-export const team: TeamMember[] = [
-  {
-    name: "Chapter Chair",
-    role: "Chair",
-    affiliation: "To be announced",
-  },
-  {
-    name: "Vice Chair",
-    role: "Vice Chair",
-    affiliation: "To be announced",
-  },
-  {
-    name: "Secretary",
-    role: "Secretary",
-    affiliation: "To be announced",
-  },
-  {
-    name: "Treasurer",
-    role: "Treasurer",
-    affiliation: "To be announced",
-  },
-];
+export const team: TeamMember[] = teamData as TeamMember[];
